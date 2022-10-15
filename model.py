@@ -61,7 +61,7 @@ def predict_probability(age, workclass, education, marital_status, race, sex, ho
     processed_data = np.concatenate((continous, encoded))
     processed_data = processed_data.reshape(1, processed_data.shape[0])
     prediction = logit.predict_proba(processed_data)[0][1]
-    prediction = "{}%".format(round(prediction*100, 2))
+    prediction = f"{round(prediction * 100, 2)}%"
 
     return prediction
 
